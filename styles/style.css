@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 1.5rem "Nunito", sans-serif;
+  min-height: 100vh;
+  background-image: radial-gradient(#d7e9fd, #f5cbe1);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: sticky;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding-top: 10%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+.maincontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* style for img */
+.profile figure {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.profile figcaption {
+  font-size: 1.2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+figure img {
+  border: 5px #333;
+  border-radius: 20%;
+  margin-bottom: 1rem;
+}
+
+/* styles for links */
+.link {
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* change font colour when a mouse hovers */
+.github :is(a:hover, a:focus),
+.linkedIn :is(a:hover, a:focus),
+.email :is(a:hover, a:focus) {
+  color: #f584be;
+}
+
+.github :is(a:active),
+.linkedIn :is(a:active),
+.email :is(a:active) {
+  color: #f5007f;
+}
+
+/* align the link to github and to linkedIn */
+.github,
+.linkedIn,
+.email {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+/* profile animation */
+@keyframes profile {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateX(10px) rotate(2deg);
+  }
+
+  66% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+.profile img:hover {
+  animation: profile 1s ease-in-out 1 alternate;
+}
+
+/* link animation */
+.github:hover,
+.linkedIn:hover,
+.email:hover {
+  background-color: #bbccf9;
+  border-radius: 10%;
+  transition-property: background-color, transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
