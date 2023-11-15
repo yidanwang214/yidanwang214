@@ -69,8 +69,7 @@ figure img {
   gap: 1rem;
 }
 
-.link img,
-.link p {
+.link img {
   margin-left: 10px;
   align-self: center;
 }
