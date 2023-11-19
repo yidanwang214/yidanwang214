@@ -7,103 +7,299 @@
   box-sizing: border-box;
 }
 
+/* variables */
+:root {
+  /* font */
+  --font: "Nunito", sans-serif;
+  --fontSizeSmall: 1.5rem;
+  --fontSizeMedium: 2rem;
+  --fontSizeLarge: 3rem;
+
+  /* color */
+  --black: #000;
+  --white: #fff;
+  --sakuraPink: #f5cbe1;
+  --peachFlowerPink: #f584be;
+  --lightBlue: #d7e9fd;
+  --darkCharcoal: #333;
+  --radialGradient: radial-gradient(#d7e9fd, #f5cbe1);
+  --linearGradient: linear-gradient(to right, #f7ccd9, #c7d0f2);
+
+  /* border */
+  --linkborder: solid #9f9f9f;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font: 1.5rem "Nunito", sans-serif;
-  min-height: 100vh;
-  background-image: radial-gradient(#d7e9fd, #f5cbe1);
-  display: flex;
-  flex-direction: column;
+  font: Arial, "Nunito", sans-serif;
+  /* height: auto; */
+  display: block;
+  /* grid-template-rows: 1fr auto 0.5fr; */
+}
+.dropDownIcon {
+  display: none;
+}
+/* set header */
+header {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  grid-template-rows: 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  font-size: var(--fontSizeMedium);
+  white-space: nowrap;
+  background: var(--linearGradient);
+}
+header .favicon {
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+.navbar {
+  margin-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-evenly;
 }
 
-header {
-  position: sticky;
-  top: 2rem;
+header :is(a:link, a:hover, a:focus, a:active, a:visited),
+footer :is(a:link, a:hover, a:focus, a:active, a:visited) {
+  color: var(--black);
+}
+header a,
+footer a {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
+/* set footer */
+footer {
+  align-self: center;
+  align-items: center;
   text-align: center;
-  padding: 1rem;
-  /* font-size: 1.5rem; */
-  white-space: nowrap;
+  padding: 2rem;
+  font-size: var(--fontSizeMedium);
+  background: var(--linearGradient);
 }
 
 /* setting attributes in main section */
 main {
-  padding-top: 10%;
-  padding-left: 30%;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
   align-items: center;
 }
 
-.maincontent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+section {
+  font-size: var(--fontSizeMedium);
+  background: var(--radialGradient);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fadeIn {
+  opacity: 1;
+  transform: none;
+}
+.fadeOut {
+  opacity: 0;
+  transform: none;
 }
 
-/* style for img */
-.profile figure {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+/* styles for home section */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 2vh 2vw;
 }
-
-.profile figcaption {
-  font-size: 1.2rem;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
 figure img {
-  border: 5px #333;
+  border: 900px thin var(--darkCharcoal);
+  width: 20rem;
   border-radius: 20%;
-  margin-bottom: 1rem;
+}
+.aboutMe {
+  display: flex;
+  height: auto;
+  flex-flow: column wrap;
+  margin-left: 4vw;
+  align-self: first baseline;
+  align-content: space-between;
+}
+.shortIntro {
+  color: var(--darkCharcoal);
+  width: 100%;
+  font-size: 40px;
+  display: flex;
+}
+.womenInTech {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+.womenInTech h1 {
+  width: auto;
+  white-space: nowrap;
+}
+.textIntro {
+  width: 50vw;
+  white-space: wrap;
+  font-size: var(--fontSizeSmall);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-/* styles for links */
-.link {
-  margin-left: 20%;
+/* skills */
+.skills {
+  font-size: var(--fontSizeLarge);
+  padding: 2vh 2vw;
+  display: block;
+}
+.skills h1 {
+  margin-bottom: 2vh;
+}
+.progLang {
+  margin-bottom: 2vh;
+  font-size: var(--fontSizeSmall);
+}
+.progLangDiv,
+.frameworksDiv {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-self: center;
+}
+
+.progLangTable,
+.frameworksTable {
+  display: flex;
+  justify-self: flex-start;
+}
+.frameworks {
+  font-size: var(--fontSizeSmall);
+}
+
+/* Projects */
+.projects {
+  padding: 2vh 2vw;
+  font-size: var(--fontSizeLarge);
+}
+/* .outhire h2 {
+  grid-area: h2Header;
+  margin: 2vh 0;
+}
+.screeningQuestion {
+  grid-area: screeningQuestion;
+  padding: 0 2vw;
+}
+.textEditor {
+  grid-area: textEditor;
+  padding: 0 2vw;
+}
+.outhire {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "h2Header h2Header"
+    "screeningQuestion  textEditor";
+} */
+
+.outhire {
+  margin: 2vh 0;
+  font-size: var(--fontSizeSmall);
+}
+.outhire h2 {
+  margin-bottom: 2vh;
+}
+.screeningQuestion,
+.textEditor {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fontSizeSmall);
+}
+.screeningQuestion {
+  margin-bottom: 2vh;
+}
+.screeningQuestion p,
+.textEditor p {
+  padding-left: 2vw;
+}
+
+/* experience */
+.experience {
+  padding: 2vh 2vw;
+  font-size: var(--fontSizeLarge);
+}
+
+.intenshipAtOuthire {
+  font-size: var(--fontSizeMedium);
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2vw;
+}
+
+/* getInTouch */
+.getInTouch {
+  width: 100%;
+  padding: 2vh 2vw;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  font-size: var(--fontSizeLarge);
 }
-
-.link img {
-  margin-left: 10px;
-  align-self: center;
+.getInTouch h1 {
+  margin-bottom: 2vh;
 }
-
-/* change font colour when a mouse hovers */
-.github :is(a:hover, a:focus),
-.linkedIn :is(a:hover, a:focus),
-.email :is(a:hover, a:focus) {
-  color: #f584be;
+.externalLink {
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 2vh;
+  font-size: var(--fontSizeSmall);
 }
-
-.github :is(a:active),
-.linkedIn :is(a:active),
-.email :is(a:active) {
-  color: #f5007f;
-}
-
-/* align the link to github and to linkedIn */
 .github,
 .linkedIn,
 .email {
-  display: inline-flex;
-  gap: 1rem;
+  justify-self: left;
+  padding: 1vh 1vw;
 }
-
+.externalLink img {
+  margin-left: 10px;
+  align-self: center;
+}
+/* change font colour when a mouse hovers */
+.github :is(a:hover, a:focus),
+.linkedIn :is(a:hover, a:focus),
+.email :is(a:hover, a:focus),
+.outhireGitHubDir :is(a:hover, a:focus),
+.screeningQuestion :is(a:hover, a:focus),
+.textEditor :is(a:hover, a:focus) {
+  color: #f584be;
+}
+.github :is(a:active),
+.linkedIn :is(a:active),
+.email :is(a:active),
+.outhireGitHubDir :is(a:active),
+.screeningQuestion :is(a:active),
+.textEditor :is(a:active) {
+  color: #f5007f;
+}
 /* set text color of links to dark grey*/
 .github a,
 .linkedIn a,
-.email a {
+.email a,
+.outhireGitHubDir a,
+.screeningQuestion a,
+.textEditor a {
   color: #333;
 }
 
 /* profile animation */
-@keyframes profile {
+@keyframes profileWobble {
   0% {
     transform: translateX(0px) rotate(0deg);
   }
@@ -120,10 +316,121 @@ figure img {
   }
 }
 .profile img:hover {
-  animation: profile 1s ease-in-out 1 alternate;
+  animation: profileWobble 1s ease-in-out 1 alternate;
+}
+
+@media screen and (min-width: 1px) and (max-aspect-ratio: 1/1) {
+  body {
+    font: Arial, "Nunito", sans-serif;
+    width: fit-content;
+    /* grid-template-rows: 1fr 5fr 0.1fr; */
+  }
+
+  .favicon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .dropDownIcon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+  header {
+    top: 0;
+    /* position: sticky; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: var(--fontSizeMedium);
+    white-space: nowrap;
+    background: var(--linearGradient);
+  }
+  .navbar {
+    margin-right: 2rem;
+    /* display: grid; */
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(0.01fr, 1fr));
+    justify-content: center;
+    justify-self: center;
+    margin: 0;
+  }
+
+  footer {
+    position: sticky;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: var(--fontSizeMedium);
+    background: var(--linearGradient);
+  }
+  main {
+    width: fit-content;
+  }
+  section {
+    display: flex;
+  }
+  .home,
+  .skills,
+  .projects,
+  .experience,
+  .getInTouch {
+    margin: 0;
+    padding: 2vw 5vw;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+  }
+  .frameworksPlaceHolder,
+  .progLangDivPlaceHolder {
+    width: 0;
+  }
+  .skills {
+    display: grid;
+  }
+  .skills h1 {
+    justify-self: center;
+  }
+
+  /* projects */
+  .projects,
+  .outhire,
+  .screeningQuestion,
+  .textEditor {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3vh;
+  }
+  .screeningQuestion video {
+    padding-bottom: 2vh;
+  }
+
+  /* experience */
+  .experience {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* link animation */
+header a:hover,
+footer a:hover {
+  background-color: #ffffff;
+  transition-property: background-color, transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  border: thin;
+  border-radius: 10px;
+}
 .github:hover,
 .linkedIn:hover,
 .email:hover {
@@ -133,53 +440,5 @@ figure img {
   transition-timing-function: linear;
   border: solid #9f9f9f;
   border-radius: 25px;
-  width: 12rem;
-}
-
-/* set media query */
-@media screen and (min-width: 1px) and (max-aspect-ratio: 1/1) {
-  body {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
-  }
-
-  main {
-    margin: 0;
-    padding: 0;
-    margin-top: 3rem;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    justify-self: center;
-    justify-items: center;
-    justify-content: center;
-  }
-
-  .maincontent {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 2fr 1fr;
-    gap: 1rem;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    justify-self: center;
-    justify-items: center;
-    justify-content: center;
-  }
-
-  .profile {
-    margin: 1.5rem;
-    padding: 0;
-  }
-
-  .link {
-    margin: 0;
-    justify-self: center;
-  }
-
-  .link div {
-    justify-self: center;
-  }
+  padding: 1vh 1vw 1vh 0.5vw;
 }

@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* variables */
+:root {
+  /* font */
+  --font: "Nunito", sans-serif;
+  --fontSizeSmall: 1.5rem;
+  --fontSizeMedium: 2rem;
+
+  /* color */
+  --sakuraPink: #f5cbe1;
+  --peachFlowerPink: #f584be;
+  --lightBlue: #d7e9fd;
+  --darkCharcoal: #333;
+  --gradient: radial-gradient(#d7e9fd, #f5cbe1);
+
+  /* border */
+  --linkborder: solid #9f9f9f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: Arial, "Nunito", sans-serif;
+  min-height: 100vh;
+  background-image: var(--gradient);
+  display: flex;
+  flex-direction: column;
+}
+
+/* set header */
+header {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  grid-template-rows: 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: var(--peachFlowerPink);
+  font-size: 2rem;
+  white-space: nowrap;
+  background-color: var(--sakuraPink);
+}
+header img {
+  margin-left: 2rem;
+}
+.navbar {
+  margin-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-evenly;
+}
+.navbar :is(a:hover, a:focus, a:active, a:visited) {
+  color: var(--peachFlowerPink);
+}
+.navbar a {
+  margin: 1rem;
+}
+
+/* setting attributes in main section */
+main {
+  padding-top: 10%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+section {
+  height: 100vh;
+}
+
+/* style for img */
+.profile figure {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.profile figcaption {
+  font-size: 1.2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+figure img {
+  border-radius: 20%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* styles for links */
+.link {
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link img {
+  margin-left: 10px;
+  align-self: center;
+}
+
+/* change font colour when a mouse hovers */
+.github :is(a:hover, a:focus),
+.linkedIn :is(a:hover, a:focus),
+.email :is(a:hover, a:focus) {
+  color: #f584be;
+}
+
+.github :is(a:active),
+.linkedIn :is(a:active),
+.email :is(a:active) {
+  color: #f5007f;
+}
+
+/* align the link to github and to linkedIn */
+.github,
+.linkedIn,
+.email,
+.womenInTech,
+.dango {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+/* set text color of links to dark grey*/
+.github a,
+.linkedIn a,
+.email a,
+.womenInTech,
+.dango {
+  color: #333;
+}
+
+/* profile animation */
+@keyframes profile {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateX(10px) rotate(2deg);
+  }
+
+  66% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+.profile img:hover {
+  animation: profile 1s ease-in-out 1 alternate;
+}
+
+/* link animation */
+.github:hover,
+.linkedIn:hover,
+.email:hover {
+  background-color: #bbccf9;
+  transition-property: background-color, transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  border: solid #9f9f9f;
+  border-radius: 25px;
+  width: 12rem;
+}
+
+/* set media query */
+@media screen and (min-width: 1px) and (max-aspect-ratio: 1/1) {
+  body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 60% 20%;
+  }
+
+  main {
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-self: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .maincontent {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+    gap: 1rem;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-self: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .profile {
+    margin: 1.5rem;
+    padding: 0;
+  }
+
+  .link {
+    margin: 0;
+    justify-self: center;
+  }
+
+  .link div {
+    justify-self: center;
+  }
+}

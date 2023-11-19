@@ -4,26 +4,167 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yidan Wang's Personal Website</title>
+    <link rel="icon" type="image/x-icon" href="img/faviconWhiteBG.png" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css""
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <header>
-      <h2>Yidan's Website 🌸</h2>
+      <img
+        src="img/faviconTransparent.png"
+        alt="favicon"
+        width="100px"
+        id="favicon"
+        class="favicon"
+      />
+      <div class="navbar" id="navbar">
+        <a href="#home"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#skills"
+          ><i class="fa fa-bar-chart" aria-hidden="true"></i> Skills</a
+        >
+        <a href="#projects"
+          ><i class="fa fa-briefcase" aria-hidden="true"></i> Projects</a
+        >
+        <a href="#experience"
+          ><i class="fa fa-history" aria-hidden="true"></i> Experience</a
+        >
+        <a href="#getInTouch"
+          ><i class="fa fa-envelope" aria-hidden="true"></i> Get In Touch</a
+        >
+      </div>
+      <a href="javascript:void(0);" class="dropDownIcon" id="dropDownIcon">
+        <i class="fa fa-bars"></i>
+      </a>
     </header>
 
     <main>
-      <div id="maincontent" class="maincontent">
+      <section id="home" class="home">
         <div id="profile" class="profile">
           <figure>
-            <img src="img/profile.jpg" alt="Yidan Wang" width="200" />
-            <figcaption>
-              <p>Software engineer 👩🏻‍💻</p>
-              <p>Amateur patissier 🧁</p>
-            </figcaption>
+            <img src="img/profile.jpg" alt="Yidan Wang" />
           </figure>
         </div>
-        <div id="link" class="link">
+
+        <div id="aboutMe" class="aboutMe">
+          <div class="shortIntro">
+            <div id="womenInTech" class="womenInTech">
+              <!-- <img
+                src="img/womenInTechEmoji.png"
+                alt="womenInTechEmoji"
+                width="20%"
+              /> -->
+              <h1>Yidan Wang</h1>
+              <p class="full-stack">Full-stack Software Developer</p>
+            </div>
+
+            <!-- <div id="dango" class="dango">
+              <img src="img/dangoEmoji.png" alt="dangoEmoji" width="30" />
+              <p>Amateur patissier</p>
+            </div> -->
+          </div>
+
+          <div id="textIntro" class="textIntro">
+            <article>
+              <p>
+                Hi, I'm Yidan, a final-year Computer Science student at the
+                University of Adelaide.
+              </p>
+              <p>
+                I possess excellent problem-solving skills and can collaborate
+                effectively with team members.
+              </p>
+              <p>
+                In my free time, you'll find me immersed in baking, sketching,
+                and enjoying the sounds of Taylor Swift and Japanese pop.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <h1>Skills</h1>
+        <div class="progLang">
+          <h2>Programming lanagues</h1>
+          <div class="progLangDiv">
+            <div class="progLangDivPlaceHolder" id="progLangDivPlaceHolder"></div>
+            <table class="progLangTable">
+              <tr>
+                <td>-Java</td>
+              </tr>
+              <tr>
+                <td>-CSS/HTML/JavaScript</td>
+              </tr>
+              <tr>
+                <td>-Python</td>
+              </tr>
+              <tr>
+                <td>-C++</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="frameworks">
+          <h2>Frameworks</h1>
+          <div class="frameworksDiv">
+            <div class="frameworksPlaceHolder" id="frameworksPlaceHolder"></div>
+            <table class="frameworksTable">
+              <tr>
+                <td>-React</td>
+              </tr>
+              <tr>
+                <td>-Node.js</td>
+              </tr>
+              <tr>
+                <td>-Flask</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h1>Projects</h1>
+        <div class="outhire">
+          <h2 class="outhireGitHubDir"><a href="https://github.com/yidanwang214/portfolios/tree/main/Outhire"> My Involvement in Outhire</a></h2>
+          <div class="screeningQuestion">
+              <video src="video/screeningQuestionDemo.mp4" width="50%" controls autoplay loop="true"></video>
+              <p>ScreeningQueston is a component where talent teams (users) can edit screening questions that will be filled out by candidates.There are 5 types of questions: Short (Single line) questions, Long (Paragraph) questions, Multiple Checkbox questions, Single Checkbox questions and Toggle questions. Each question can be marked as mandatory and can be moved up or down. When users edit the screening questions, these questions will be displayed on the application form that can be accessed by candidates. Mandatory questions that remain unanswered will be highlighted with a tooptip for users when they submit the form. The answers to the screening questions will be saved to databased can be rendered on a route called Candidate where users can view the answers and screen candidates. You can play with the ScreeningQuestion component at <a href="https://app.outhire.ai/settings/workflows">here</a>.</p>
+          </div>
+          <div class="textEditor">
+            <video src="video/wordDetectionDemo.mp4" width="50%" controls autoplay loop="true"></video>
+            <p>On “Job Post” page there is a text editor that can detect and highlight gender-coded words and words that promote diversity and emphasise a positive work environment . To accurately detect the nuances of each word based on context, I trained a NLP model spaCy to make the text editor identify word usage in a more precise manner. I also did Depth First Search to ensure that the highlights in the text editor move seamlessly regardless of the format and the number of bullet points in any job description. This means that if a user adds or deletes any part of the text and this affects the position of highlighted words, the highlights should adjust to the new index of the highlighted words. You can play with the text editor by signing up at <a href="https://www.outhire.ai/">Outhire</a> and creating a free AI-generated job description.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience">
+        <h1>Experience</h1>
+        <div class="intenshipAtOuthire">
+          <img src="img/outhireLogo.png" width="300"/>
+          <article>
+            <p><a href="https://www.linkedin.com/in/yidanwang214/#experience">Outhire</a><p>
+            <ul>
+              <p>I interned at Outhire as a full-stack developer for 3 months. During my time with Outhrie, I did the following tasks and acquired the following skills:</p>
+              <li>Utilised Supabase for real-time data synchronisation and data storage.</li>
+              <li>Implemented front-end features and functionality on Remix in Typescript in collaboration with the product manager.</li>
+              <li>Trained spaCy with NER to detect gender-coded words in job description, which improved the accuracy of recommendations for usage of words.</li>
+              <li>Created API using Flask to make frontend JSON data to be compatible with back-end word detection server written in Python.</li>
+              <li>Implemented recursion to prevent the highlight of each detected word from being disturbed by nested bullet points.</li>
+              <li>Conducted testing on front-end features and functionality to verify their correctness and accuracy.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="getInTouch" class="getInTouch">
+        <h1>Get In Touch</h1>
+        <div id="externalLink" class="externalLink">
           <div id="github" class="github">
             <img src="img/githubLogo.png" alt="githubLogo" width="30" />
             <a
@@ -60,11 +201,11 @@
             >
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer><a href="#">Top</a></footer>
   </body>
 
-  <script></script>
+  <script type="module" src="scripts/index.js"></script>
 </html>
