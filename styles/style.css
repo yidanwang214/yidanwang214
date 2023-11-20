@@ -102,6 +102,8 @@ section {
   background: var(--radialGradient);
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
 }
 .fadeIn {
   opacity: 1;
@@ -346,6 +348,7 @@ figure img {
     top: 0;
     margin-left: 2rem;
     margin-right: 1rem;
+    padding-top: 1rem;
   }
   header {
     top: 0;
@@ -355,7 +358,7 @@ figure img {
     grid-template-rows: 2fr;
     justify-items: center;
     align-items: center;
-    padding: 4vh 0vw;
+    padding: 8vh 0vw;
     font-size: var(--fontSizeMedium);
     white-space: nowrap;
     background: var(--linearGradient);
@@ -392,10 +395,23 @@ figure img {
   .getInTouch {
     margin: 0;
     padding: 2vw 5vw;
-    align-self: center;
-    align-content: center;
     align-items: center;
   }
+
+  .aboutMe {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .textIntro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
   .frameworksPlaceHolder,
   .progLangDivPlaceHolder {
     width: 0;
@@ -422,6 +438,10 @@ figure img {
 
   /* experience */
   .experience {
+    display: flex;
+    flex-direction: column;
+  }
+  .intenshipAtOuthire {
     display: flex;
     flex-direction: column;
   }
