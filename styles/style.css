@@ -247,7 +247,11 @@ figure img {
   grid-template-columns: auto auto;
   gap: 2vw;
 }
-.intenshipAtOuthire ur {
+.intenshipAtOuthire ul {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: justify;
   font-size: var(--fontSizeSmall);
 }
 
