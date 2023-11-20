@@ -241,12 +241,14 @@ figure img {
   padding: 2vh 2vw;
   font-size: var(--fontSizeLarge);
 }
-
 .intenshipAtOuthire {
   font-size: var(--fontSizeMedium);
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vw;
+}
+.intenshipAtOuthire ur {
+  font-size: var(--fontSizeSmall);
 }
 
 /* getInTouch */
