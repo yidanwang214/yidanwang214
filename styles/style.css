@@ -331,9 +331,14 @@ figure img {
   body {
     font: Arial, "Nunito", sans-serif;
     width: fit-content;
-    /* grid-template-rows: 1fr 5fr 0.1fr; */
   }
-
+  h1 {
+    font-size: 40px;
+  }
+  .full-stack,
+  h2 {
+    font-size: 20px;
+  }
   .favicon {
     display: block;
     position: absolute;
@@ -388,6 +393,7 @@ figure img {
   section {
     display: flex;
   }
+
   .home,
   .skills,
   .projects,
@@ -407,6 +413,7 @@ figure img {
     display: flex;
     flex-direction: column;
     width: fit-content;
+    text-align: justify;
   }
 
   .frameworksPlaceHolder,
