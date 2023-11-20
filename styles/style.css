@@ -46,15 +46,15 @@ body {
 header {
   top: 0;
   position: sticky;
-  width: 100%;
+  /* width: 100%; */
   display: grid;
-  grid-template-columns: 3fr 10fr;
   grid-template-rows: 1fr;
-  justify-content: space-between;
+  grid-template-columns: 10% 90%;
+  justify-content: left;
   align-items: center;
   padding: 2rem;
+  gap: 2rem;
   font-size: var(--fontSizeMedium);
-  white-space: nowrap;
   background: var(--linearGradient);
 }
 header .favicon {
@@ -62,9 +62,10 @@ header .favicon {
   margin-right: 1rem;
 }
 .navbar {
-  margin-right: 2rem;
+  margin-right: 2vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1.2fr 1fr; */
+  grid-template-columns: repeat(5, auto);
   grid-template-rows: 1fr;
   justify-content: space-evenly;
 }
@@ -83,7 +84,8 @@ footer {
   align-self: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-size: var(--fontSizeMedium);
   background: var(--linearGradient);
 }
@@ -112,9 +114,13 @@ section {
 
 /* styles for home section */
 .home {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: flex;
+  flex-direction: row;
   padding: 2vh 2vw;
+
+  /* display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 2vh 40vw; */
 }
 figure img {
   border: 900px thin var(--darkCharcoal);
@@ -331,6 +337,7 @@ figure img {
     position: absolute;
     left: 0;
     top: 0;
+    padding-top: 2vh;
   }
   .dropDownIcon {
     display: block;
@@ -342,14 +349,13 @@ figure img {
   }
   header {
     top: 0;
-    /* position: sticky; */
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr;
     justify-items: center;
     align-items: center;
-    padding: 2rem;
+    padding: 4vh 0vw;
     font-size: var(--fontSizeMedium);
     white-space: nowrap;
     background: var(--linearGradient);
