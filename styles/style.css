@@ -398,15 +398,12 @@ figure img {
     align-items: center;
   }
 
+  /* home */
   .aboutMe {
-    align-self: stretch;
     display: flex;
     flex-direction: column;
-    height: auto;
   }
-
   .textIntro {
-    align-self: stretch;
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -435,6 +432,11 @@ figure img {
   .screeningQuestion video {
     padding-bottom: 2vh;
   }
+  .screeningQuestion p,
+  .textEditor p {
+    display: inline-block;
+    text-align: justify;
+  }
 
   /* experience */
   .experience {
@@ -444,6 +446,11 @@ figure img {
   .intenshipAtOuthire {
     display: flex;
     flex-direction: column;
+    text-align: justify;
+    font-size: var(--fontSizeSmall);
+  }
+  .intenshipAtOuthire ul {
+    padding: 0vh 4vw;
   }
 }
 
